@@ -1,0 +1,233 @@
+@charset "UTF-8";
+$cor1: #F08910;
+$cor2: #3A3A3A;
+$fonte1: sans-serif;
+::selection{
+    color: $cor1;
+    background-color: $cor2;
+}
+body{
+    padding: 0;
+    margin: 0;
+    background-color: #F1F1F1;
+}
+.container-fluid{
+    padding: 0px;
+    margin: 0;
+}
+.nopadding{
+    padding: 0;
+}
+/*HEADER Superior*/
+.cabeca{
+    height: 15vh;
+    margin-left: 20vh;
+    margin-right: 20vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+/*Menu Navegação*/
+.menu{
+    ul{
+        list-style: none;
+        display: flex;
+        flex-wrap: wrap;
+    }
+    li{
+        font-family: $fonte1;
+        color: gray;
+        margin: 20px;
+        padding-bottom: 5px;
+        font-size: 0.9em;
+        cursor: pointer;
+        &:hover{
+            color: black;
+            border-bottom: 2px solid $cor1 ;
+        }
+    }
+    .ini{
+        color: black;
+        border-bottom: 2px solid $cor1 ;
+    }
+}
+/*Usuario login*/
+    .user{
+        display: flex;
+        align-items: center;
+    }
+    .nome{
+        font-family: $fonte1;
+        margin-left: 10px;
+        p{
+            margin: 0;
+            font-size: 0.9em;
+        }
+        a{
+            color: $cor1;
+            text-align: right;
+        }
+    .name{
+        color: $cor2;
+    }    
+}
+/*Faixa*/
+    .faixa{
+        height: 170px;
+        width: 100%;
+        background-color: $cor1;
+        z-index: -1;
+        position: absolute;
+    }
+/*Conteudo*/
+    h3{
+        width: 100%;
+        margin-bottom: 0;
+        text-align: center;
+        font-family: $fonte1;
+        font-weight: 1;
+    }
+    .principal{
+        width: 100%;
+        display: flex;
+        height: 66vh;
+        justify-content: center;
+        margin-top: 90px;
+    }
+    .contento{
+        background-color: white;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        width: 75%;
+        height: 100%;
+    }
+    /*Caixas de seleção*/
+     .box{
+        margin: 20px;
+        background: linear-gradient(0deg, rgba(237,237,237,1) 35%, rgba(255,255,255,1) 100%);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        flex-direction: column;
+        border-radius: 30px;
+        width: 250px;
+        height: 230px;
+        border: solid 1px gainsboro;
+        font-family: $fonte1;
+        color: $cor2;
+        transition-property: all;
+        transition-duration: .3s;
+        transition-timing-function: linear;
+        &:hover{
+            background: linear-gradient(0deg, $cor1 35%, rgba(255,255,255,1) 100%);
+            cursor: pointer;
+            color: #fff;
+            transform: scale(1.1);
+        }
+        img{
+            width: 25%;
+            height: 25%;
+        }
+    }
+/*Footer*/
+    footer{
+    background-color: #000;
+    height: 50px;
+    margin-top: 20px;
+    display: hidden;
+    p{
+        margin: 0;
+        text-align: center;
+        color: gray;
+        font-family: $fonte1;
+        padding-top: 16px;
+        font-size: 14px;
+    }
+    a{
+        color: $cor1;
+        text-decoration: none;
+    }
+}
+/*Logo ideia animado*/
+    .idea{
+        width: 25px;
+        height: 25px;
+        position: absolute;
+        bottom: 20%;
+        animation: 1s infinite alternate ideia;
+    }
+    /*Responsivo Tablet*/
+    @media (max-width: 1000px){
+        .cabeca{
+           margin: 0;
+           .logo{
+               width: 20%;
+               img{
+                   width: 100%;
+               }
+           }
+       }
+       ul{
+           justify-content: center;
+       }
+       li{
+           margin: 5px;
+       }
+       .principal{
+            width: 100%;
+            height: 100%;
+        }
+        .idea{
+            display: none;
+        }
+}
+/*CElular*/
+    @media (max-width: 500px){
+        body{
+            background-color: #fff;
+        }
+        .cabeca{
+            margin: 0;
+            background-image: url("../imgs/logo.png");
+            background-repeat: no-repeat;
+            background-position: center top;
+            padding-top: 40px;
+            .logo{
+                display: none;
+            }
+        }
+        .menu{
+            li{
+                font-size: 0.7em;
+                margin: 2px;
+                font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+            }   
+        }
+        .nome{
+            font-family: $fonte1;
+            margin-left: 10px;
+            p{
+                margin: 0;
+                font-size: 0.8em;
+            }
+        }
+        .principal{
+            width: 100%;
+            height: 100%;
+        }
+        .contento{
+            background-color: white;
+            width: 85%;
+            height: 100%;
+        }
+        
+    }
+    /*KeyFrames*/
+    @keyframes ideia{
+        to{
+            bottom: 22%;
+        }
+    }
